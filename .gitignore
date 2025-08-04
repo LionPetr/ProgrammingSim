@@ -1,0 +1,15 @@
+    # Unreal Engine generated files and folders
+    .vs/
+    Binaries/
+    Build/
+    DerivedDataCache/
+    Intermediate/
+    Saved/
+    *.VC.db
+    *.opensdf
+    *.sdf
+    *.sln
+    *.suo
+    *.user
+    *.workspace
+    *.DS_Store
