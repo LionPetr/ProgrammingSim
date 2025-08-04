@@ -12,6 +12,7 @@ APlayerCharacter::APlayerCharacter()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
 	Camera->SetupAttachment(RootComponent);
+	Camera->bUsePawnControlRotation = true;
 
 }
 
@@ -34,5 +35,34 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAxis("MoveForward", this, &APlayerCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &APlayerCharacter::MoveRight);
+
+	PlayerInputComponent->BindAxis("TurnCamera", this, &APlayerCharacter::Turn);
+	PlayerInputComponent->BindAxis("LookUp", this, &APlayerCharacter::LookUp);
+
+
 }
 
+void APlayerCharacter::MoveForward(float Input)
+{
+	FVector ForwardDirection = GetActorForwardVector();
+	AddMovementInput(ForwardDirection, Input);
+}
+
+void APlayerCharacter::MoveRight(float Input)
+{
+	FVector RightDirection = GetActorRightVector();
+	AddMovementInput(RightDirection, Input);
+}
+
+void APlayerCharacter::Turn(float input)
+{
+	AddControllerYawInput(input);
+}
+
+void APlayerCharacter::LookUp(float input)
+{
+	AddControllerPitchInput(input);
+}
