@@ -1,15 +1,15 @@
 
-    .vs/
-    Binaries/
-    Build/
-    DerivedDataCache/
-    Intermediate/
-    Saved/
-    *.VC.db
-    *.opensdf
-    *.sdf
-    *.sln
-    *.suo
-    *.user
-    *.workspace
-    *.DS_Store
+.vs/
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.opensdf
+*.sdf
+*.sln
+*.suo
+*.user
+*.workspace
+*.DS_Store
