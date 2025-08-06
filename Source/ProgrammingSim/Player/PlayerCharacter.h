@@ -28,7 +28,7 @@ public:
 
 protected: 
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UCameraComponent* Camera;
 
 	void MoveForward(float Input);
